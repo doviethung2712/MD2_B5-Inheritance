@@ -1,5 +1,6 @@
 <?php
 include_once 'Shape.php';
+
 class Triangle extends Shape
 {
     public $side1;
@@ -7,7 +8,7 @@ class Triangle extends Shape
     public $side3;
     public $color;
 
-    public function __construct($side1, $side2, $side3,$color)
+    public function __construct($color, $side1 = 1, $side2 = 1, $side3 = 1)
     {
         $this->side1 = $side1;
         $this->side2 = $side2;
@@ -15,12 +16,22 @@ class Triangle extends Shape
         $this->color = $color;
     }
 
-    public function toString()
+    public function getArea()
     {
-        return 'Chu vi: '.$this->getPerimeter().', Diện tích: '.$this->getArea().', Màu: '.$this->color;
+        $dienTich = ($this->side1 * $this->side1) * (sqrt(3) / 4);
+        return $dienTich;
     }
 
+    public function getPerimeter()
+    {
+        $chuVi = $this->side1 + $this->side2 + $this->side3;
+        return $chuVi;
+    }
 
+    public function toString()
+    {
+        return 'Chu vi: ' . $this->getPerimeter() . ', Diện tích: ' . $this->getArea() . ', Màu: ' . $this->color;
+    }
 
 
 }
