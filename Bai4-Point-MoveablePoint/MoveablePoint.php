@@ -43,14 +43,17 @@ class MoveablePoint extends Point
 
     public function move()
     {
-        
+        $this->x += $this->xSpeed;
+        $this->y += $this->ySpeed;
+
+        return $this->x.' và '.$this->y;
+
     }
 
     public function toString()
     {
-        
+        return "Tọa Độ XY là : ".$this->move();
     }
-
 
 
 }
